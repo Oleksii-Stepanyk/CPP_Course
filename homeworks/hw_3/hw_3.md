@@ -2,6 +2,14 @@ Task 1: Because add_subdirectories is for CMake traversal finding available targ
 
 Task 3: Because PUBLIC propagates to downstream targets - targets that use target for which the property was defined. This is useful for headers, that serve as public API. PRIVATE hides properties and files from other targets, that why it's used for source files.
 
+Task 4:
+Build commands:
+`cmake -G Ninja -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -S source -B build/debug`
+`cmake --build build/debug`
+
+`cmake -G Ninja -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release -S source -B build/release`
+`cmake --build build/release`
+
 Task 5: Error message:
 ```
 cmake --build build/debug
